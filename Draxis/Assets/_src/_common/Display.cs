@@ -37,10 +37,17 @@ class Display : MonoBehaviour
         // Apply window properties.
         Screen.SetResolution( new_window.wnd_width , new_window.wnd_height , new_window.wnd_isFullScreen );
 
+        // Saving the resolution to PlayerPrefs
+        PlayerPrefs.SetInt("wnd_width", new_window.wnd_width);
+        PlayerPrefs.SetInt("wnd_height", new_window.wnd_height);
+
         // For testing (can be removed later)
         Debug.Log( "Width       : " + new_window.wnd_width.ToString() );
         Debug.Log( "Height      : " + new_window.wnd_height.ToString() );
         Debug.Log( "Full Screen : " + new_window.wnd_isFullScreen.ToString() );
+
+        Debug.Log( "Width from PlayerPrefs  : " + PlayerPrefs.GetInt("wnd_width"));
+        Debug.Log( "Height from PlayerPrefs : " + PlayerPrefs.GetInt("wnd_height"));
     }
 
     //**********
@@ -55,5 +62,4 @@ class Display : MonoBehaviour
 
         Screen.SetResolution( new_window.wnd_width , new_window.wnd_height , new_window.wnd_isFullScreen );
     }
-
 }

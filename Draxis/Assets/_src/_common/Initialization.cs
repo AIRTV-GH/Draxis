@@ -21,6 +21,7 @@ public class Initialization : MonoBehaviour
     {
         new_display = GetComponent< Display >();
         new_display.display_set_res();
+
     }
 
 }
