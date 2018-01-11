@@ -1,0 +1,14 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_src\_gameplay\GridCreator.cs">
+    <Files>
+      <File FileName="Assets\_src\_gameplay\GridCreator.cs" Line="5" Column="54" />
+      <File FileName="Assets\_src\_gameplay\GridManager.cs" Line="16" Column="40" />
+      <File FileName="Assets\_src\_common\Display.cs" Line="2" Column="60" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

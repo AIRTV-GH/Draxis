@@ -38,8 +38,8 @@ class Display : MonoBehaviour
         Screen.SetResolution( new_window.wnd_width , new_window.wnd_height , new_window.wnd_isFullScreen );
 
         // Saving the resolution to PlayerPrefs
-        PlayerPrefs.SetInt("wnd_width", new_window.wnd_width);
-        PlayerPrefs.SetInt("wnd_height", new_window.wnd_height);
+		PrefUtils.pref_set_int( "wnd_width" , new_window.wnd_width );
+		PrefUtils.pref_set_int( "wnd_height", new_window.wnd_height );
 
         // For testing (can be removed later)
         Debug.Log( "Width       : " + new_window.wnd_width.ToString() );
