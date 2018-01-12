@@ -24,21 +24,26 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        camera_pc_controls();
+    }
+
+    private void camera_pc_controls()
+    {
+        #if UNITY_STANDALONE_WIN
         //WASD movement for PC
         float x = Input.GetAxis("Horizontal") * Time.deltaTime * scrollSpeed;
         float z = Input.GetAxis("Vertical") * Time.deltaTime * scrollSpeed;
+        transform.Translate(x, 0, z); //We need to translate the global instead of local position
 
         //Zoom controls for PC
         if (Input.GetAxis("Mouse ScrollWheel") > 0.0f) { //Zoom In
             targetCamSize -= zoomSpeed * Time.deltaTime;
         }
-        if (Input.GetAxis("Mouse ScrollWheel") < 0.0f) { //Zoom Out
+        if (Input.GetAxis("Mouse ScrollWheel") < 0.0f){ //Zoom Out
             targetCamSize += zoomSpeed * Time.deltaTime;
         }
-
         targetCamSize = Mathf.Clamp(targetCamSize, 1.5f, 5.0f);
         cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetCamSize, Time.deltaTime * zoomLerpSpeed);
-
-        transform.Translate(x, 0, z); //We need to translate the global instead of local position
+        #endif
     }
 }

@@ -44,7 +44,7 @@ public class GridCreator : MonoBehaviour
 
 			// When we are creating grids in scene there will be alot of game objects.
 			// It can be confusing so lets create grids as a child of "Grid Handler" game object.
-			//gc_gridToCreate.transform.parent = GameObject.FindGameObjectWithTag( "Grid Handler" ).transform;
+			gc_gridToCreate.transform.parent = GameObject.FindGameObjectWithTag( "Grid Handler" ).transform;
 		}
 		else
 		{
