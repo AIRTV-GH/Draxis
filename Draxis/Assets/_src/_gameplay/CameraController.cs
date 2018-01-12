@@ -14,17 +14,26 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
+    public float zoomSpeed;    //Speed of zooming in/out
+    public float scrollSpeed;  //Speed of WASD movement
+    public Camera cam;
 
     // Update is called once per frame
     void Update()
     {
-        var x = Input.GetAxis("Horizontal") * Time.deltaTime * 3.0f;
-        var z = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f;
+        //WASD movement for PC
+        float x = Input.GetAxis("Horizontal") * Time.deltaTime * scrollSpeed;
+        float z = Input.GetAxis("Vertical") * Time.deltaTime * scrollSpeed;
+
+        //Zoom controls for PC
+        if (Input.GetAxis("Mouse ScrollWheel") > 0.0f) { //Zoom In
+            cam.orthographicSize -= zoomSpeed * Time.deltaTime;
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") < 0.0f) { //Zoom Out
+            cam.orthographicSize += zoomSpeed * Time.deltaTime;
+        }
+
+        cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, 1.5f, 5.0f);
 
         transform.Translate(x, 0, z); //We need to translate the global instead of local position
     }
