@@ -13,6 +13,6 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour 
 {
-	public static readonly int MAX_GRIDS_ALLOWED  = 10;       // How much grids can we create ? 
+	public static readonly int MAX_GRIDS_ALLOWED = 10;       // How much grids can we create ? 
 	public static int          CURRENT_GRID_COUNT = 0;        // How much grid created ?
 }

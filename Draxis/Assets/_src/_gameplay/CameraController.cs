@@ -15,8 +15,11 @@ public class CameraController : MonoBehaviour
 {
 
     public float zoomSpeed;    //Speed of zooming in/out
+    public float zoomLerpSpeed; //Speed of the zoom lerp
     public float scrollSpeed;  //Speed of WASD movement
     public Camera cam;
+
+    float targetCamSize = 3.0f;
 
     // Update is called once per frame
     void Update()
@@ -27,13 +30,14 @@ public class CameraController : MonoBehaviour
 
         //Zoom controls for PC
         if (Input.GetAxis("Mouse ScrollWheel") > 0.0f) { //Zoom In
-            cam.orthographicSize -= zoomSpeed * Time.deltaTime;
+            targetCamSize -= zoomSpeed * Time.deltaTime;
         }
         if (Input.GetAxis("Mouse ScrollWheel") < 0.0f) { //Zoom Out
-            cam.orthographicSize += zoomSpeed * Time.deltaTime;
+            targetCamSize += zoomSpeed * Time.deltaTime;
         }
 
-        cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, 1.5f, 5.0f);
+        targetCamSize = Mathf.Clamp(targetCamSize, 1.5f, 5.0f);
+        cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetCamSize, Time.deltaTime * zoomLerpSpeed);
 
         transform.Translate(x, 0, z); //We need to translate the global instead of local position
     }
