@@ -24,12 +24,13 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        #if UNITY_STANDALONE_WIN
         camera_pc_controls();
+        #endif
     }
 
     private void camera_pc_controls()
     {
-        #if UNITY_STANDALONE_WIN
         //WASD movement for PC
         float x = Input.GetAxis("Horizontal") * Time.deltaTime * scrollSpeed;
         float z = Input.GetAxis("Vertical") * Time.deltaTime * scrollSpeed;
@@ -44,6 +45,5 @@ public class CameraController : MonoBehaviour
         }
         targetCamSize = Mathf.Clamp(targetCamSize, 1.5f, 5.0f);
         cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetCamSize, Time.deltaTime * zoomLerpSpeed);
-        #endif
     }
 }

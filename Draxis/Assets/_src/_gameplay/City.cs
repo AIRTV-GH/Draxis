@@ -12,8 +12,8 @@ using UnityEngine;
 
 public class City : MonoBehaviour {
 
-    public string cityName;
-    public Vector2 cityPosition;
+    public string       cityName;
+    public Vector2      cityPosition;
 
     public City(string name, Vector2 position)
     {
