@@ -38,11 +38,11 @@ public class GridCreator : MonoBehaviour
 			if( random == 1 )        // Upper direction
 				Instantiate( gc_gridToCreate , new Vector3( this.gameObject.transform.position.x , this.gameObject.transform.position.y , this.gameObject.transform.position.z + DISTANCE ) , Quaternion.identity );
 			else if( random == 2 )   // Down direction
-				Instantiate( gc_gridToCreate , new Vector3( this.gameObject.transform.position.x , this.gameObject.transform.position.y , this.gameObject.transform.position.z + DISTANCE ) , Quaternion.identity );
+				Instantiate( gc_gridToCreate , new Vector3( this.gameObject.transform.position.x , this.gameObject.transform.position.y , this.gameObject.transform.position.z - DISTANCE ) , Quaternion.identity );
 			else if( random == 3 )   // Left direction
-				Instantiate( gc_gridToCreate , new Vector2( this.gameObject.transform.position.x - DISTANCE , this.gameObject.transform.position.y ) , Quaternion.identity );
+				Instantiate( gc_gridToCreate , new Vector3(this.gameObject.transform.position.x + DISTANCE, this.gameObject.transform.position.y, this.gameObject.transform.position.z), Quaternion.identity);
 			else if( random == 4 )   // Right direction
-				Instantiate( gc_gridToCreate , new Vector2( this.gameObject.transform.position.x + DISTANCE , this.gameObject.transform.position.y + DISTANCE ) , Quaternion.identity );
+				Instantiate( gc_gridToCreate , new Vector3(this.gameObject.transform.position.x - DISTANCE, this.gameObject.transform.position.y, this.gameObject.transform.position.z), Quaternion.identity);
 
 			// When we are creating grids in scene there will be alot of game objects.
 			// It can be confusing so lets create grids as a child of "Grid Handler" game object.

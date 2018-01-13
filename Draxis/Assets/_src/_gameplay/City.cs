@@ -10,7 +10,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class City : MonoBehaviour {
+[System.Serializable]
+public class City {
 
     public string       cityName;
     public Vector2      cityPosition;
