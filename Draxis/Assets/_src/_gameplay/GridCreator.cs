@@ -54,4 +54,8 @@ public class GridCreator : MonoBehaviour
 
 		GridManager.CURRENT_GRID_COUNT++;
 	}
+    public void OnMouseDown()
+    {
+        //Enable a UI about the empty space
+    }
 }
