@@ -14,12 +14,14 @@ using UnityEngine;
 public class GridCreator : MonoBehaviour 
 {
 	public GameObject   gc_gridToCreate;
+    public EmpireManager epm;
 
 	private const float DISTANCE = 1.0f;
 
 	private void Start()
 	{
 		gc_createGrid();
+        epm = GameObject.Find("Empire Manager").GetComponent<EmpireManager>();
 	}
 
 	//*****
@@ -57,5 +59,7 @@ public class GridCreator : MonoBehaviour
     public void OnMouseDown()
     {
         //Enable a UI about the empty space
+        Vector2 cityPos = new Vector2(this.transform.position.x, this.transform.position.z);
+        epm.addCity(cityPos, "New City"); //For now lets just instantly add a city
     }
 }

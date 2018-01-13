@@ -15,11 +15,12 @@ public class EmpireManager : MonoBehaviour {
 
     [SerializeField]
     List<City> cities = new List<City>(); //List of cities in our empire. Can be used to prevent overlapping cities, min distance between, displaying a list of all cities, etc.
+    public GameObject city;
 
     public void addCity(Vector2 cityPos, string cityName) //gets called when a city is created
     {
         cities.Add(new City(cityName, cityPos)); //Adds a new City object to the List: cities.
-
+        Instantiate(city, new Vector3(cityPos.x, 0.75f, cityPos.y), Quaternion.identity); //Instantiates the city model
         //Used for testing purposes
         Debug.Log("City Name: " + cityName + " City Position: " + cityPos);
     }

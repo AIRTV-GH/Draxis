@@ -420,6 +420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cities: []
+  city: {fileID: 1267287583357406, guid: 45a5c277fe2baa245882ccf72798342f, type: 2}
 --- !u!4 &1814997659
 Transform:
   m_ObjectHideFlags: 0
