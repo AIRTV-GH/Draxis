@@ -20,14 +20,15 @@ public class GridCreator : MonoBehaviour
 
 	private void Start()
 	{
-		gc_createGrid();
+		gc_createMountain();
         epm = GameObject.Find("Empire Manager").GetComponent<EmpireManager>();
 	}
 
 	//*****
 	// Creates grid with random direction.
 	//*****
-	private void gc_createGrid()
+
+	private void gc_createMountain()
 	{
 		// Create grid if we are not created a grid before.
 		// Create grid if there is a still space to create grids.
@@ -56,10 +57,15 @@ public class GridCreator : MonoBehaviour
 
 		GridManager.CURRENT_GRID_COUNT++;
 	}
+
+    //Specifically for PC
+    //this function is going to handle: 
+    // 1.)Centering the camera on the selected tile.
+    // 2.)Making all information about the tile available to outside functions.
     public void OnMouseDown()
     {
         //Enable a UI about the empty space
         Vector2 cityPos = new Vector2(this.transform.position.x, this.transform.position.z);
-        epm.addCity(cityPos, "New City"); //For now lets just instantly add a city
+        epm.addCity(cityPos, "New City"); //For now lets just instantly add a city 
     }
 }
