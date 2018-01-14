@@ -16,6 +16,7 @@ public class TroopController : MonoBehaviour
 {
 
     public Camera maincam; // Assign from inspector.
+    public bool   isTroopSelected = false;
 
     private void Update()
     {
@@ -28,13 +29,16 @@ public class TroopController : MonoBehaviour
     private void tc_movement()
     {
         float distance = 4.0f;
-        if( Input.GetMouseButtonDown( 1 ) )
+        // Move the troops if player pressed the right click & troop is selected.
+        if( Input.GetMouseButtonDown( 1 ) && isTroopSelected )
         {
-              // Create our raycast to detect mouse hit position.
+            // Create our raycast to detect mouse hit position.
             Ray ray                            = maincam.ScreenPointToRay( Input.mousePosition );
             Vector3 point                      = ray.origin + ( ray.direction * distance );
             Debug.Log( "Clicked Point : " + point.ToString() );
             this.gameObject.transform.position = point;
+            // We are done with movement so lets finish movement.
+            isTroopSelected                    = false;
         }
     }
 
@@ -46,7 +50,7 @@ public class TroopController : MonoBehaviour
     private void OnMouseDown()
     {
         Debug.Log( "At your service ! (Now you are controlling a troop) " );
-        tc_movement();
+        isTroopSelected = true;
     }
 
     private void OnMouseExit()
