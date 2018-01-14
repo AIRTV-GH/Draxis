@@ -57,7 +57,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 9d618fe59430dc84391ff9d1c3513310, type: 2}
+  - {fileID: 2100000, guid: 9719deb42e9e7414197382be7167790b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -108,3 +108,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gc_gridToCreate: {fileID: 1792166284314604}
+  epm: {fileID: 0}

@@ -152,6 +152,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23031175651700680, guid: c86af192bb3169e4dbd27148cfdc7f54,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9719deb42e9e7414197382be7167790b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c86af192bb3169e4dbd27148cfdc7f54, type: 2}
   m_IsPrefabParent: 0
@@ -873,7 +878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cities: []
   city: {fileID: 1267287583357406, guid: 45a5c277fe2baa245882ccf72798342f, type: 2}
-  cityDensity: 2
+  citySpacing: 0
 --- !u!4 &1814997659
 Transform:
   m_ObjectHideFlags: 0
