@@ -294,7 +294,8 @@
     <Compile Include="Assets\_src\_gameplay\GridCreaterV2.cs" />
     <Compile Include="Assets\_src\_gameplay\GridCreator.cs" />
     <Compile Include="Assets\_src\_gameplay\GridManager.cs" />
-    <Compile Include="Assets\_src\_gameplay\GridSpace.cs" />
+    <Compile Include="Assets\_src\_gameplay\GridSpaceInteractable.cs" />
+    <Compile Include="Assets\_src\_gameplay\GridSpaceTemplate.cs" />
     <Compile Include="Assets\_src\_gameplay\TroopController.cs" />
     <Compile Include="Assets\_src\_ui\CityUI.cs" />
     <Compile Include="Assets\_src\_utils\PrefUtils.cs" />

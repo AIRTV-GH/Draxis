@@ -15,13 +15,13 @@ public class GridManager : MonoBehaviour
 {
 	public static readonly int MAX_GRIDS_ALLOWED = 15;        // How much grids can we create ? 
 	public static int          CURRENT_GRID_COUNT = 0;        // How much grid created ?
-    public List<GridSpace> world; //This is a list of every grid space in the world
+    public List<GridSpaceTemplate> world; //This is a list of every grid space in the world
     public Vector3 selectedTile; //This gets set whenever a grid space is clicked/tapped.
-    public GridCreaterV2 gcv2;
+    public GridCreaterV2 gcv2; //Instance of our GridCreaterV2 script
 
     public void Start()
     {
-        world = new List<GridSpace>();
+        world = new List<GridSpaceTemplate>();
         gcv2 = GetComponent<GridCreaterV2>();
         gcv2.gc_createGround();
     }

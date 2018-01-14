@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿
+//*********************************************************
+//
+// $created by Cody Stough
+// $purpose : Provide more flexible terrain generation options
+// $attach  : attached to the grid handler
+//
+//*********************************************************
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,6 +22,10 @@ public class GridCreaterV2 : MonoBehaviour {
     public void Start()
     {
         GM = GetComponent<GridManager>();
+        if (GM == null)
+        {
+            Debug.Log("Unable to locate Grid Manager");
+        }
     }
 
     public void gc_createWater() //Creates different forms of water areas in the world
@@ -33,7 +46,7 @@ public class GridCreaterV2 : MonoBehaviour {
             {
                 GameObject newGridSpace = Instantiate(gridSpaces[0], new Vector3(i, 0.0f, j), Quaternion.identity);
                 newGridSpace.transform.parent = gameObject.transform;
-                GM.world.Add(new GridSpace(1, 0, new Vector2(i, j)));
+                GM.world.Add(new GridSpaceTemplate(1, 0, new Vector2(i, j)));
             }
         }
     }
