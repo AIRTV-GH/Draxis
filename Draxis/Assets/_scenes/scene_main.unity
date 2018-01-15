@@ -484,7 +484,6 @@ MonoBehaviour:
     resource: 0
     gridSpacePos: {x: 0, y: 0}
   selectedTile: {x: 0, y: 0, z: 0}
-  gcv2: {fileID: 0}
 --- !u!4 &845252250
 Transform:
   m_ObjectHideFlags: 0
@@ -712,6 +711,8 @@ MonoBehaviour:
   zoomLerpSpeed: 10
   scrollSpeed: 10
   cam: {fileID: 577904847}
+  zoomMax: 1.5
+  zoomMin: 8
 --- !u!4 &1325121875
 Transform:
   m_ObjectHideFlags: 0

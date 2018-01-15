@@ -29,6 +29,9 @@ public class GridCreaterV2 : MonoBehaviour {
 
         //Initialize the world
         gc_createGround();
+        gc_createMountains();
+        gc_createWater();
+        gc_populateResources();
     }
 
     public void gc_createWater() //Creates different forms of water areas in the world

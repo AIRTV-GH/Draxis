@@ -18,6 +18,7 @@ public class CameraController : MonoBehaviour
     public float zoomLerpSpeed; //Speed of the zoom lerp
     public float scrollSpeed;  //Speed of WASD movement
     public Camera cam;
+    public float zoomMax, zoomMin;
 
     float targetCamSize = 3.0f;
 
@@ -43,7 +44,7 @@ public class CameraController : MonoBehaviour
         if (Input.GetAxis("Mouse ScrollWheel") < 0.0f){ //Zoom Out
             targetCamSize += zoomSpeed * Time.deltaTime;
         }
-        targetCamSize = Mathf.Clamp(targetCamSize, 1.5f, 5.0f);
+        targetCamSize = Mathf.Clamp(targetCamSize, zoomMax, zoomMin);
         cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetCamSize, Time.deltaTime * zoomLerpSpeed);
     }
 }
