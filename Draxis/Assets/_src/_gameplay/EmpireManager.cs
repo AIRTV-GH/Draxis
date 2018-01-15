@@ -22,7 +22,7 @@ public class EmpireManager : MonoBehaviour {
     public void Start()
     {
         cities = new List<City>();
-        GM = GameObject.Find("Grid Manager").GetComponent<GridManager>();
+        GM = GameObject.Find("Grid Handler").GetComponent<GridManager>();
     }
 
     public bool cityCheck(Vector2 cityPos)
@@ -51,12 +51,12 @@ public class EmpireManager : MonoBehaviour {
         return pass;
     }
 
-    public void addCity(Vector2 cityPos, string cityName) //gets called when the spawn city button is pressed
+    public void addCity(Vector3 cityPos, string cityName) //gets called when the spawn city button is pressed
     {
         if (cityCheck(cityPos))
         {
             cities.Add(new City(cityName, cityPos)); //Adds a new City object to the List: cities.
-            GameObject newCity = Instantiate(city, new Vector3(cityPos.x, 0.75f, cityPos.y), Quaternion.identity); //Instantiates the city model
+            GameObject newCity = Instantiate(city, new Vector3(cityPos.x, 0.75f, cityPos.z), Quaternion.identity); //Instantiates the city model
             newCity.transform.parent = gameObject.transform;
         }
     }

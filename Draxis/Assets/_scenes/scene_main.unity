@@ -708,7 +708,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaa2b4b892ebcad4b8ff8d3cd78c5c87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghChildren: []
   zoomSpeed: 10
   zoomLerpSpeed: 10
   scrollSpeed: 10
@@ -1033,7 +1032,8 @@ MonoBehaviour:
     attackPower: 0
     life: 0
     pos: {x: 0, y: 0}
-  troopModels: []
+  troopModels:
+  - {fileID: 1445498017162244, guid: 5a3c71f1cf31d5f499770f022aa75ca2, type: 2}
   GM: {fileID: 0}
 --- !u!1 &1967415817
 GameObject:

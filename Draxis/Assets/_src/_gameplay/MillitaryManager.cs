@@ -11,14 +11,13 @@ public class MillitaryManager : MonoBehaviour {
     public void Start()
     {
         troops = new List<Troop>();
-        troopModels = new GameObject[1];
-        GM = transform.parent.GetComponent<GridManager>();
+        GM = GameObject.Find("Grid Handler").GetComponent<GridManager>();
     }
 
-    public void addTroop(int type, int attackPower, int life, Vector2 pos)
+    public void addTroop(int type, int attackPower, int life, Vector3 pos)
     {
         troops.Add(new Troop(type, attackPower, life, pos));
-        GameObject newTroop = Instantiate(troopModels[0], new Vector3(pos.x, 0.75f, pos.y), Quaternion.identity);
+        GameObject newTroop = Instantiate(troopModels[0], new Vector3(pos.x, 0.75f, pos.z), Quaternion.identity);
         newTroop.transform.parent = gameObject.transform;
     }
 

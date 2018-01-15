@@ -7,6 +7,7 @@ public class GridSpaceInteractable : MonoBehaviour {
 
     public GridManager GM;
     public EmpireManager EPM;
+    public MillitaryManager MM;
     public CameraController CC;
     public Canvas gridSpaceUI;
 
@@ -14,9 +15,10 @@ public class GridSpaceInteractable : MonoBehaviour {
     {
         GM = GetComponentInParent<GridManager>();
         EPM = GameObject.Find("Empire Manager").GetComponent<EmpireManager>();
+        MM = GameObject.Find("Empire Manager").GetComponent<MillitaryManager>();
         CC = GameObject.Find("Main Camera").GetComponent<CameraController>();
-        gridSpaceUI = GetComponentInChildren<Canvas>();
-        gridSpaceUI.enabled = false;
+        //gridSpaceUI = GetComponentInChildren<Canvas>();
+        //gridSpaceUI.enabled = false;
     }
 
     public void OnMouseDown()
@@ -28,14 +30,17 @@ public class GridSpaceInteractable : MonoBehaviour {
     {
         GM.selectedTile = gameObject.transform.position; //Sets itself as the selected tile
         CC.centerCam(gameObject.transform.position); //Centers the Camera on itself
-        gridSpaceUI.enabled = !gridSpaceUI.enabled; //Toggles the UI
-        
+        //gridSpaceUI.enabled = !gridSpaceUI.enabled; //Toggles the UI
+
+        //Debug Area    <-- Proof that the buttons work
+        //EPM.addCityButton();
+        //MM.addTroopButton();
     }
     public void Update() //This should not be the mobile solution, dont want 100 update calls per frame from the terrain.
     {
         if (GM.selectedTile != transform.position)
         {
-            gridSpaceUI.enabled = false;
+            //gridSpaceUI.enabled = false;
         }
     }
 }
