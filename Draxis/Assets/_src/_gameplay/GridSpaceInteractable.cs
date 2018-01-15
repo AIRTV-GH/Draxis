@@ -6,11 +6,13 @@ public class GridSpaceInteractable : MonoBehaviour {
 
     public GridManager GM;
     public EmpireManager EPM;
+    public CameraController CC;
 
     public void Start()
     {
         GM = GetComponentInParent<GridManager>();
         EPM = GameObject.Find("Empire Manager").GetComponent<EmpireManager>();
+        CC = GameObject.Find("Main Camera").GetComponent<CameraController>();
     }
 
     public void OnMouseDown()
@@ -21,6 +23,8 @@ public class GridSpaceInteractable : MonoBehaviour {
     public void OnMouseUpAsButton() //Only runs when the mouse up and mouse down locations are the same
     {
         GM.selectedTile = gameObject.transform.position;
+
+        CC.centerCam(gameObject.transform.position);
 
         //Activate a UI script for selecting a grid space
         //For now just instantly add a city

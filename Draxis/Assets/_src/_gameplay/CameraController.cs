@@ -47,4 +47,12 @@ public class CameraController : MonoBehaviour
         targetCamSize = Mathf.Clamp(targetCamSize, zoomMax, zoomMin);
         cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetCamSize, Time.deltaTime * zoomLerpSpeed);
     }
+    public void centerCam(Vector3 pos)
+    {
+        Vector2 camPos;
+        camPos.x = pos.x - 4.0f;
+        camPos.y = pos.z - 4.0f;
+
+        transform.position = new Vector3(camPos.x, 5.5f, camPos.y);
+    }
 }

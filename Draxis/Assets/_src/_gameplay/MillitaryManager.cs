@@ -15,4 +15,9 @@ public class MillitaryManager : MonoBehaviour {
     {
         troops.Add(new Troop(type, attackPower, life, pos));
     }
+
+    public void deleteTroop(Troop troop)
+    {
+        troops.Remove(troop);
+    }
 }
