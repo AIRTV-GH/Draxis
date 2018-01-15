@@ -47,12 +47,6 @@ public class TroopController : MonoBehaviour
         transform.localScale = new Vector3( 0.6f , 0.6f , 0.6f ); // Just a simple selection animation.
     }
 
-    private void OnMouseDown()
-    {
-        Debug.Log( "At your service ! (Now you are controlling a troop) " );
-        isTroopSelected = true;
-    }
-
     private void OnMouseExit()
     {
         transform.localScale = new Vector3( 0.5f , 0.5f , 0.5f );
