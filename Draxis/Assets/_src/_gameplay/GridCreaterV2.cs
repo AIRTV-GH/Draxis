@@ -26,6 +26,9 @@ public class GridCreaterV2 : MonoBehaviour {
         {
             Debug.Log("Unable to locate Grid Manager");
         }
+
+        //Initialize the world
+        gc_createGround();
     }
 
     public void gc_createWater() //Creates different forms of water areas in the world
