@@ -113,53 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &138402113
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4126823695112506, guid: 5a3c71f1cf31d5f499770f022aa75ca2, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4126823695112506, guid: 5a3c71f1cf31d5f499770f022aa75ca2, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4126823695112506, guid: 5a3c71f1cf31d5f499770f022aa75ca2, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4126823695112506, guid: 5a3c71f1cf31d5f499770f022aa75ca2, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4126823695112506, guid: 5a3c71f1cf31d5f499770f022aa75ca2, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4126823695112506, guid: 5a3c71f1cf31d5f499770f022aa75ca2, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4126823695112506, guid: 5a3c71f1cf31d5f499770f022aa75ca2, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4126823695112506, guid: 5a3c71f1cf31d5f499770f022aa75ca2, type: 2}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114297887441991410, guid: 5a3c71f1cf31d5f499770f022aa75ca2,
-        type: 2}
-      propertyPath: maincam
-      value: 
-      objectReference: {fileID: 577904847}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 5a3c71f1cf31d5f499770f022aa75ca2, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &171110975
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,7 +496,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &845252251
 MonoBehaviour:
@@ -576,7 +529,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &938712880
 Transform:
   m_ObjectHideFlags: 0
@@ -590,7 +543,7 @@ Transform:
   - {fileID: 1445927648}
   - {fileID: 1222108040}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1168492580
 GameObject:
@@ -755,12 +708,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaa2b4b892ebcad4b8ff8d3cd78c5c87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ghChildren: []
   zoomSpeed: 10
   zoomLerpSpeed: 10
   scrollSpeed: 10
   cam: {fileID: 577904847}
   zoomMax: 1.5
   zoomMin: 8
+  centerOffset: 4
 --- !u!4 &1325121875
 Transform:
   m_ObjectHideFlags: 0
@@ -1048,6 +1003,7 @@ MonoBehaviour:
     cityPosition: {x: 0, y: 0}
   city: {fileID: 1267287583357406, guid: 45a5c277fe2baa245882ccf72798342f, type: 2}
   citySpacing: 0
+  GM: {fileID: 0}
 --- !u!4 &1814997659
 Transform:
   m_ObjectHideFlags: 0
@@ -1059,7 +1015,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1814997660
 MonoBehaviour:
@@ -1077,6 +1033,8 @@ MonoBehaviour:
     attackPower: 0
     life: 0
     pos: {x: 0, y: 0}
+  troopModels: []
+  GM: {fileID: 0}
 --- !u!1 &1967415817
 GameObject:
   m_ObjectHideFlags: 0

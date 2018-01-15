@@ -13,14 +13,20 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-
+    public GameObject[] ghChildren;
     public float zoomSpeed;    //Speed of zooming in/out
     public float zoomLerpSpeed; //Speed of the zoom lerp
     public float scrollSpeed;  //Speed of WASD movement
     public Camera cam;
     public float zoomMax, zoomMin;
+    public float centerOffset;
 
     float targetCamSize = 3.0f;
+
+    public void Start()
+    {
+        ghChildren = GameObject.Find("Grid Handler").GetComponentsInChildren<GameObject>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -37,6 +43,14 @@ public class CameraController : MonoBehaviour
         float z = Input.GetAxis("Vertical") * Time.deltaTime * scrollSpeed;
         transform.Translate(x, 0, z); //We need to translate the global instead of local position
 
+        if (x != 0.0f || z != 0.0f) //Need to find a better way to do this, turning off the clicked UI's for the tiles
+        {
+            foreach(GameObject GO in ghChildren)
+            {
+                GO.GetComponent<Canvas>().enabled = false;
+            }
+        }
+
         //Zoom controls for PC
         if (Input.GetAxis("Mouse ScrollWheel") > 0.0f) { //Zoom In
             targetCamSize -= zoomSpeed * Time.deltaTime;
@@ -50,8 +64,8 @@ public class CameraController : MonoBehaviour
     public void centerCam(Vector3 pos)
     {
         Vector2 camPos;
-        camPos.x = pos.x - 4.0f;
-        camPos.y = pos.z - 4.0f;
+        camPos.x = pos.x - centerOffset;
+        camPos.y = pos.z - centerOffset;
 
         transform.position = new Vector3(camPos.x, 5.5f, camPos.y);
     }

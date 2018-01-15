@@ -17,10 +17,12 @@ public class EmpireManager : MonoBehaviour {
     public List<City> cities; //List of cities in our empire. Can be used to prevent overlapping cities, min distance between, displaying a list of all cities, etc.
     public GameObject city;
     public float citySpacing;
+    public GridManager GM;
 
     public void Start()
     {
         cities = new List<City>();
+        GM = GameObject.Find("Grid Manager").GetComponent<GridManager>();
     }
 
     public bool cityCheck(Vector2 cityPos)
@@ -49,7 +51,7 @@ public class EmpireManager : MonoBehaviour {
         return pass;
     }
 
-    public void addCity(Vector2 cityPos, string cityName) //gets called when a city is created
+    public void addCity(Vector2 cityPos, string cityName) //gets called when the spawn city button is pressed
     {
         if (cityCheck(cityPos))
         {
@@ -57,5 +59,10 @@ public class EmpireManager : MonoBehaviour {
             GameObject newCity = Instantiate(city, new Vector3(cityPos.x, 0.75f, cityPos.y), Quaternion.identity); //Instantiates the city model
             newCity.transform.parent = gameObject.transform;
         }
+    }
+
+    public void addCityButton()
+    {
+        addCity(GM.selectedTile, "New City");
     }
 }
