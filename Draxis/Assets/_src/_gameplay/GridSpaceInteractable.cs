@@ -24,7 +24,7 @@ public class GridSpaceInteractable : MonoBehaviour {
 
         //Activate a UI script for selecting a grid space
         //For now just instantly add a city
-        Vector2 cityPos = new Vector2(this.transform.position.x, this.transform.position.z);
-        EPM.addCity(cityPos, "New City"); //For now lets just instantly add a city
+        //Vector2 cityPos = new Vector2(this.transform.position.x, this.transform.position.z);
+        //EPM.addCity(cityPos, "New City"); //For now lets just instantly add a city
     }
 }

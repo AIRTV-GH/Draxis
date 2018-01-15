@@ -28,7 +28,7 @@ public class TroopUI : MonoBehaviour
         UItils.ui_change_alpha( ui_object );
     }
 
-    private void OnMouseDown()
+    private void OnMouseUpAsButton()
     {
         troopui_change_state();
     }

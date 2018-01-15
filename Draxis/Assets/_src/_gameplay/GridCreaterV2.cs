@@ -46,6 +46,7 @@ public class GridCreaterV2 : MonoBehaviour {
 
     public void gc_createGround() //Creates the initial ground in the world
     {
+        //This is just for now, later we can decide how the terrain is to be randomly generated
         for(int i = 0; i < gridSize.x; i++)
         {
             for(int j = 0; j < gridSize.y; j++)
