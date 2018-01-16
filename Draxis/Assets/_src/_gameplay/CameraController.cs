@@ -20,11 +20,13 @@ public class CameraController : MonoBehaviour
     public float zoomMax, zoomMin;
     public float centerOffset;
 
+    public GridManager GM;
+
     float targetCamSize = 3.0f;
 
     public void Start()
     {
-        
+        GM = GameObject.Find("Grid Handler").GetComponent<GridManager>();
     }
 
     // Update is called once per frame
