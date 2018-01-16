@@ -22,6 +22,8 @@ public class CameraController : MonoBehaviour
 
     public GridManager GM;
 
+    private Vector3 camPos;
+
     float targetCamSize = 3.0f;
 
     public void Start()
@@ -34,6 +36,7 @@ public class CameraController : MonoBehaviour
     {
         #if UNITY_STANDALONE_WIN
         camera_pc_controls();
+        updateCenter( camPos );
         #endif
     }
 
@@ -54,12 +57,23 @@ public class CameraController : MonoBehaviour
         targetCamSize = Mathf.Clamp(targetCamSize, zoomMax, zoomMin);
         cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetCamSize, Time.deltaTime * zoomLerpSpeed);
     }
+
     public void centerCam(Vector3 pos)
     {
-        Vector2 camPos;
         camPos.x = pos.x - centerOffset;
         camPos.y = pos.z - centerOffset;
-
-        transform.position = new Vector3(camPos.x, 5.5f, camPos.y);
+        camPos.z = pos.z - centerOffset;
+        //transform.position = new Vector3(camPos.x , 5.5f, camPos.y );
     }
+
+    // Need to call this from update. using time.deltatime
+    private void updateCenter( Vector3 targetPos )
+    {
+        if( targetPos != null )
+        {
+            transform.position = Vector3.Lerp( transform.position , targetPos , 5.0f * Time.deltaTime );
+        }
+            
+    }
+
 }
