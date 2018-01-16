@@ -36,7 +36,7 @@ public class CameraController : MonoBehaviour
     {
         #if UNITY_STANDALONE_WIN
         camera_pc_controls();
-        updateCenter( camPos );
+        //updateCenter( camPos );
         #endif
     }
 
@@ -63,7 +63,7 @@ public class CameraController : MonoBehaviour
         camPos.x = pos.x - centerOffset;
         camPos.y = pos.z - centerOffset;
         camPos.z = pos.z - centerOffset;
-        //transform.position = new Vector3(camPos.x , 5.5f, camPos.y );
+        transform.position = new Vector3(camPos.x , 5.5f, camPos.y );
     }
 
     // Need to call this from update. using time.deltatime

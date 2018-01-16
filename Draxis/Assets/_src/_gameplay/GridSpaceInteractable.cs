@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class GridSpaceInteractable : MonoBehaviour {
 
@@ -27,11 +28,9 @@ public class GridSpaceInteractable : MonoBehaviour {
 
     public void OnMouseUpAsButton() //Only runs when the mouse up and mouse down locations are the same
     {
-        GM.selectedTile = gameObject.transform.position; //Sets itself as the selected tile
-        CC.centerCam(gameObject.transform.position); //Centers the Camera on itself
-
-        //Debug Area    <-- Proof that the buttons work
-        //EPM.addCityButton();
-        //MM.addTroopButton();
+        if(!EventSystem.current.IsPointerOverGameObject()) { //Ignores click when mouse is over UI element
+            GM.selectedTile = gameObject.transform.position; //Sets itself as the selected tile
+            CC.centerCam(gameObject.transform.position); //Centers the Camera on itself
+        }
     }
 }
