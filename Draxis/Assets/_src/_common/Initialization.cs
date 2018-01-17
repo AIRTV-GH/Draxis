@@ -17,11 +17,12 @@ public class Initialization : MonoBehaviour
 
 	private Display new_display;
 
-    private void Start()
+    private IEnumerator Start()
     {
         new_display = GetComponent< Display >();
         new_display.display_set_res();
-
+        yield return new WaitForSeconds( 4.0f );
+        SceneUtils.change_scene_async( 1 );
     }
 
 }
